@@ -28,9 +28,6 @@ function wphfc_header_code() {
 
 add_action('wp_head', 'wphfc_header_code');
 
-
-
-<?php
 //Code for footer
 function wphfc_footer_code() {
 	?>

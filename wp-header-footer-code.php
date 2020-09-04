@@ -17,16 +17,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+//Code for header
+function wphfc_header_code() {
+	?>
+<!-- Add Code/Script here to insert into wordpress head -->
+	
+
+<?php
+}
+
+add_action('wp_head', 'wphfc_header_code');
 
 
 
+<?php
+//Code for footer
+function wphfc_footer_code() {
+	?>
+<!-- Add Code/Script here to insert into wordpress footer -->
+
+<?php
+}
+add_action('wp_footer', 'wphfc_footer_code');
 
 
 //Preventing accidental deactivation of plugin.
 //disabling deactivate option for this particular plugin, you can remove this section if you don't need it.
 // to deactivate this plugin comment this below four line first then wordpress will show deactive, delete option in WordPress admin.
-add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'disable_plugin_deactivation' );
 function disable_plugin_deactivation ($actions) {
 	unset( $actions['deactivate'] );
     return $actions;
 }
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'disable_plugin_deactivation' );
